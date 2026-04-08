@@ -1,43 +1,68 @@
-//Desafio 1
-function validarSenha() {
-    const s1 = document.getElementById("senha1").value;
-    const s2 = document.getElementById("senha2").value;
-    const msg = document.getElementById("mensagem");
+function validar(){
+    const idade = document.getElementById("idade").value;
+    const nivel = document.getElementById("nivel").value;
+    const mensagem = document.getElementById("mensagem");
 
-    if (s1 === s2 && s1.length >= 8) {
-        msg.innerText = "Senha válida";
-        msg.style.color = "green";
-    } else {
-        msg.innerText = "Senha inválida — mínimo 8 caracteres e iguais";
-        msg.style.color = "red";
-    }
-}
-//Desafio 2
-function verificarDesconto() {
-    const idade = Number(document.getElementById("idade").value);
-    const estudante = document.getElementById("estudante").value;
-    const mensagem = document.getElementById("msg");
-
-    if (idade > 60 || estudante === "sim") {
-        mensagem.innerText = "Tem direito ao desconto";
+    if(idade >= 16 && nivel > 5){
+        mensagem.innerText = "Incrição aceita. Categoria PRO";
         mensagem.style.color = "green";
-    } else {
-        mensagem.innerText = "Sem desconto";
+    }else if (idade >= 16 && nivel <= 5){
+        mensagem.innerText = "Incrição aceita. Categoria INICIANTE";
+        mensagem.style.color = "blue";
+    }else{
+        mensagem.innerText = "Incrição negada. Idade minimo: 16 anos";
         mensagem.style.color = "red";
     }
 }
 
-function verificarBouncer() {
-    const nome = document.getElementById("nome").value.trim();
-    const idade = Number(document.getElementById("age").value);
-    const msg = document.getElementById("msgBouncer");
+function validarSenha(){
+    const senha1 = document.getElementById("senha1").value;
+    const senha2 = document.getElementById("senha2").value;
+    const mensagemDesafio1 = document.getElementById("mensagemDesafio1");
 
-
-    if (nome === "" || idade < 0) {
-        msg.innerText = "Erro — nome vazio ou idade negativa";
-        msg.style.color = "red";
-    } else {
-        msg.innerText = "Entrada permitida";
-        msg.style.color = "green";
+    if(senha1.length >= 8){
+        if (senha1 == senha2){
+        mensagemDesafio1.innerText = "Cadastro concluido";
+        mensagemDesafio1.style.color = "green";
+    }else {
+        mensagemDesafio1.innerText = "As senhas são diferentes.";
+        mensagemDesafio1.style.color = "red";
+    } } else{
+        mensagemDesafio1.innerText = "Senha inválida.";
+        mensagemDesafio1.style.color = "red";
     }
 }
+
+function validarDesconto(){
+    const idade = document.getElementById("idade").value;
+    const estudante = document.getElementById("estudante").value;
+    const mensagemDesafio2 = document.getElementById("mensagemDesafio2");
+
+    if (idade > 60 || estudante === "sim"){
+        mensagemDesafio2.innerText = "Você ganhou desconto especial!";
+        mensagemDesafio2.style.color = "green";
+    } else {
+        mensagemDesafio2.innerText = "Você não tem direito ao desconto.";
+        mensagemDesafio2.style.color = "red";
+    }
+}
+
+function validarNomeIdade() {
+    const nome = document.getElementById("nome3").value;
+    const idade = document.getElementById("idade3").value;
+    const mensagemDesafio3 = document.getElementById("mensagemDesafio3");
+    console.log(nome);
+    console.log(idade);
+    if (nome.length < 1 || idade < 0) {
+        mensagemDesafio3.innerText = "Nome vazio ou idade negativa";
+        mensagemDesafio3.style.color = "red";
+    } else {
+        mensagemDesafio3.innerText = "Entrada permitida";
+        mensagemDesafio3.style.color = "green";
+    }
+}
+ 
+
+
+
+

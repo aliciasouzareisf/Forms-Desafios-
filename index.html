@@ -2,57 +2,67 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios Inteligentes</title>
     <link rel="stylesheet" href="style.css">
-    <title>Desafios de Validação</title>
 </head>
-
 <body>
-    <div>
-        <form>
-            <h2>Confirmação de Senha</h2>
-            <label>Senha:</label>
-            <input type="password" id="senha1">
+    <h1>Atividade 2 </h1>
+    <h2> Formulários inteligentes e tomadas de decisão</h2>
 
-            <label>Confirmar Senha:</label>
-            <input type="password" id="senha2">
+    
+    <form id="form">
+        <label> Nome:</label>
+        <input type="text" id="nome">
+        <br>
+        <label> idade:</label>
+        <input type="number" id="idade">
+        <br>
+        <label> Nivel de experiencia (1 a 10):</label>
+        <input type="number" id="nivel">
+        <br>
+        <button type="button" onclick="validar()">Enviar</button>
+    </form>
+    <p id="mensagem"></p>
+    
+   <h2> Crie uma senha.</h2>
+    <form id="Form1">
+        <label> Senha:</label>
+        <input type="password" id="senha1">
+        <br>
+        <label> Digite sua senha novamente:</label>
+        <input type="password" id="senha2">
+        <br>
+        <button type="button" onclick="validarSenha()">Validar</button>
+    </form>
+    <p id="mensagemDesafio1"></p>
 
-            <button type="button" onclick="validarSenha()">Validar</button>
-        </form>
-        <p id="mensagem"></p>
-    </div>
-    <hr>
+    <h2>Veja se você tem direito a desconto.</h2>
+    <form id="Form2">
+        <label>Qual sua idade?</label>
+        <input type="number" id="idade">
+        <br>
+        <label>Você é estudante?</label>
+        <select id="estudante">
+            <option value="nao">Não</option>
+            <option value="sim">Sim</option>
+        </select>
+        <br>
+        <button type="button" onclick="validarDesconto()">Validar</button>
+    </form>
+    <p id="mensagemDesafio2"></p>
 
-    <div>
-        <form>
-            <h2> Desafio 2</h2>
-            <label>Idade:</label>
-            <input type="number" id="idade">
-
-            <select name="estudante" id="estudante">
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
-            </select>
-
-            <button type="button" onclick="verificarDesconto()">Verificar Desconto</button>
-        </form>
-        <p id="msg"></p>
-    </div>
-    <hr>
-
-    <div>
-        <form>
-            <h2>Desafio 3 — Bouncer do sistema</h2>
-            <label>Nome:</label>
-            <input type="text" id="nome">
-
-            <label>Idade:</label>
-            <input type="number" id="age">
-
-            <button type="button" onclick="verificarBouncer()">Entrar</button>
-            
-        </form>
-        <p id="msgBouncer"></p>
-    </div>
+    <h2>Preencha.</h2>
+    <form id="Form3">
+        <label> Nome:</label>
+        <input type="text" id="nome3">
+        <br>
+        <label> idade:</label>
+        <input type="number" id="idade3">
+        <br>
+        <button type="button" onclick="validarNomeIdade()">Validar</button>
+    </form>
+    <p id="mensagemDesafio3"></p>
     <script src="scripts.js"></script>
 </body>
 </html>
