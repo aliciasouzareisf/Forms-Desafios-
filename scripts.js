@@ -41,4 +41,3 @@ function verificarBouncer() {
         msg.style.color = "green";
     }
 }
-
